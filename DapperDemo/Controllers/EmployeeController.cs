@@ -48,7 +48,8 @@ namespace DapperDemo.Controllers
                 var firstTable = users.ReadAsync<User>().Result;
                 var secondTable = users.ReadAsync<Employee>().Result;
 
-                return Ok(firstTable);
+                var result = new {firstTable, secondTable};
+                return Ok(result);
             }
         }
     }
